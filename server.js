@@ -25,7 +25,7 @@ const { connectDB, getConnection } = require("./config/database");
 const app = express();
 const PORT = process.env.PORT || 3000;
 const JWT_SECRET =
-  process.env.JWT_SECRET || "your-super-secret-jwt-key-change-in-production";
+  process.env.JWT_SECRET || "***REMOVED***";
 
 // Environment check
 const isProduction = process.env.NODE_ENV === "production";
