@@ -6,7 +6,7 @@ const path = require("path");
 const dbConfig = {
   host: process.env.DB_HOST || "localhost",
   user: process.env.DB_USER || "lontainc_def",
-  password: process.env.DB_PASSWORD || "***REMOVED***",
+  password: process.env.DB_PASSWORD || "Goodness123@",
   database: process.env.DB_NAME || "lontainc_bizzleap",
   port: process.env.DB_PORT || 3306,
   connectionLimit: 10,

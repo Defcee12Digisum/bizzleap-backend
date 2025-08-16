@@ -85,8 +85,8 @@ const findOrCreateUser = async (profile, provider) => {
 passport.use(
   new GoogleStrategy(
     {
-      clientID: process.env.***REMOVED***,
-      clientSecret: process.env.***REMOVED***,
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       callbackURL: "/api/auth/google/callback",
     },
     async (accessToken, refreshToken, profile, done) => {
@@ -104,8 +104,8 @@ passport.use(
 passport.use(
   new FacebookStrategy(
     {
-      clientID: process.env.***REMOVED***,
-      clientSecret: process.env.***REMOVED***,
+      clientID: process.env.FACEBOOK_APP_ID,
+      clientSecret: process.env.FACEBOOK_APP_SECRET,
       callbackURL: "/api/auth/facebook/callback",
       profileFields: ["id", "displayName", "email", "picture.type(large)"],
     },
@@ -124,8 +124,8 @@ passport.use(
 passport.use(
   new TwitterStrategy(
     {
-      consumerKey: process.env.***REMOVED***,
-      consumerSecret: process.env.***REMOVED***,
+      consumerKey: process.env.TWITTER_CONSUMER_KEY,
+      consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
       callbackURL: "/api/auth/twitter/callback",
       includeEmail: true,
     },
