@@ -4,11 +4,12 @@ const path = require("path");
 
 // Database connection configuration
 const dbConfig = {
-  host: process.env.DB_HOST,       // localhost:3306
-  user: process.env.DB_USER,       // lontainc_def
-  password: process.env.DB_PASSWORD, // Goodness123@
-  database: process.env.DB_NAME,   // lontainc_bizzleap
-  port: process.env.DB_PORT || 3306,
+  host: process.env.DB_HOST,          // s2.whitelabelclouds.com
+  user: process.env.DB_USER,          // lontainc_def
+  password: process.env.DB_PASSWORD,  // Goodness123@
+  database: process.env.DB_NAME,      // lontainc_bizzleap
+  port: process.env.DB_PORT || 3306,  // default port
+  waitForConnections: true,
   connectionLimit: 10,
   acquireTimeout: 60000,
   timeout: 60000,
