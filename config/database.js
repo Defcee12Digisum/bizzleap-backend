@@ -4,10 +4,10 @@ const path = require("path");
 
 // Database connection configuration
 const dbConfig = {
-  host: process.env.DB_HOST || "localhost",
-  user: process.env.DB_USER || "lontainc_def",
-  password: process.env.DB_PASSWORD || "Goodness123@",
-  database: process.env.DB_NAME || "lontainc_bizzleap",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
   port: process.env.DB_PORT || 3306,
   connectionLimit: 10,
   acquireTimeout: 60000,
