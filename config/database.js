@@ -4,7 +4,7 @@ const path = require("path");
 
 // Database connection configuration
 const dbConfig = {
-  host: process.env.localhost:3306,
+  host: process.env.localhost,
   user: process.env.lontainc_def,
   password: process.env.Goodness123@,
   database: process.env.lontainc_bizzleap,
