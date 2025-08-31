@@ -46,12 +46,12 @@ async function testEnvironmentVariables() {
   ];
 
   const oauthVars = [
-    "GOOGLE_CLIENT_ID",
-    "GOOGLE_CLIENT_SECRET",
-    "FACEBOOK_APP_ID",
-    "FACEBOOK_APP_SECRET",
-    "TWITTER_CONSUMER_KEY",
-    "TWITTER_CONSUMER_SECRET",
+    "***REMOVED***",
+    "***REMOVED***",
+    "***REMOVED***",
+    "***REMOVED***",
+    "***REMOVED***",
+    "***REMOVED***",
     "GITHUB_CLIENT_ID",
     "GITHUB_CLIENT_SECRET",
   ];
@@ -140,17 +140,17 @@ async function testOAuthEndpoints() {
     {
       name: "Google",
       path: "google",
-      envVars: ["GOOGLE_CLIENT_ID", "GOOGLE_CLIENT_SECRET"],
+      envVars: ["***REMOVED***", "***REMOVED***"],
     },
     {
       name: "Facebook",
       path: "facebook",
-      envVars: ["FACEBOOK_APP_ID", "FACEBOOK_APP_SECRET"],
+      envVars: ["***REMOVED***", "***REMOVED***"],
     },
     {
       name: "Twitter",
       path: "twitter",
-      envVars: ["TWITTER_CONSUMER_KEY", "TWITTER_CONSUMER_SECRET"],
+      envVars: ["***REMOVED***", "***REMOVED***"],
     },
     {
       name: "GitHub",
