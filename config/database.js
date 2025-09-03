@@ -4,22 +4,19 @@ const path = require("path");
 
 // Database connection configuration
 const dbConfig = {
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-  port: process.env.DB_PORT || 3306,
+  host: process.env.DB_HOST,          // e.g. s2.whitelabelclouds.com
+  user: process.env.DB_USER,          // e.g. lontainc_def
+  password: process.env.DB_PASSWORD,  // e.g. Goodness123@
+  database: process.env.DB_NAME,      // e.g. lontainc_bizzleap
+  port: process.env.DB_PORT || 3306,  // default port
+  waitForConnections: true,
   connectionLimit: 10,
-  acquireTimeout: 60000,
-  timeout: 60000,
-  reconnect: true,
+  acquireTimeout: 60000,              // ✅ valid
   charset: "utf8mb4",
   ssl:
     process.env.DB_SSL === "true"
-      ? {
-          rejectUnauthorized: false,
-        }
-      : false,
+      ? { rejectUnauthorized: false }
+      : undefined,                    // ✅ don’t pass false
 };
 
 // Create connection pool
@@ -43,7 +40,7 @@ const connectDB = async () => {
     testConnection.release();
 
     console.log(
-      `✅ MySQL Connected: ${dbConfig.host}:${dbConfig.port}/${dbConfig.database}`,
+      `✅ MySQL Connected: ${dbConfig.host}:${dbConfig.port}/${dbConfig.database}`
     );
 
     // Create tables if they don't exist
@@ -74,7 +71,7 @@ const createDatabase = async () => {
 
   const connection = await mysql.createConnection(tempConfig);
   await connection.execute(
-    `CREATE DATABASE IF NOT EXISTS \`${dbConfig.database}\` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci`,
+    `CREATE DATABASE IF NOT EXISTS \`${dbConfig.database}\` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci`
   );
   await connection.end();
 
